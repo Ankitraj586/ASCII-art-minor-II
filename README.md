@@ -1,95 +1,72 @@
-Grayscale to ASCII Art Project
+ASCII Art Generator (Python)
 Project Purpose
 
-This project changes a grayscale image (given as numbers) into ASCII art.
-ASCII art means making a picture using keyboard characters like @, #, *, and space.
+This project turns image data (numbers) into ASCII art.
+ASCII art means making a picture using characters like @, #, *, and spaces.
 
+Here, the image is already given as numbers in a 2D list.
 Each number shows how dark or light a pixel is.
-The program replaces these numbers with characters to create a picture in text form.
-
-The final output is saved in a text file called decoded_ascii.txt.
+The program changes these numbers into characters and saves the result in a text file.
 
 How the Code Works
-1. Image Data (p_chind)
 
-p_chind is a list of lists (2D list).
+The variable p_chind stores the image as rows and columns of numbers.
 
-Each number is a pixel value.
+Smaller numbers mean dark pixels.
 
-Smaller numbers mean darker color.
+Bigger numbers mean light pixels.
 
-Bigger numbers mean lighter color.
+A list called gray_order has characters from dark to light:
 
-2. Characters for Colors
-gray_order = ['@', '#', '%', '*', '+', '=', '-', ':', '.', ' ']
+@ # % * + = - : . (space)
 
 
-@ is used for very dark pixels.
+The program:
 
-Space ( ) is used for very light pixels.
+Matches pixel values with characters
 
-Characters in between show medium brightness.
+Reads the image row by row
 
-3. Matching Numbers to Characters
+Replaces each number with a character
 
-The code connects grayscale values (0–255) with characters.
+Joins characters to make lines
 
-A dictionary is made to store this matching.
+Saves all lines into a file called decoded_ascii.txt
 
-This helps to quickly replace numbers with characters.
-
-4. Creating ASCII Lines
-
-The code goes through each row.
-
-Every number is replaced with its matching character.
-
-Characters are joined to make one line.
-
-All lines together make the ASCII picture.
-
-5. Saving the Result
-
-The ASCII picture is saved in a file:
-
-decoded_ascii.txt
-
-
-Each line is written exactly as it should appear.
+If a number does not match exactly, the program uses a space.
 
 How to Run the Program
-What You Need
+Requirements
 
 Python 3 installed
 
 No extra libraries needed
 
-Steps to Run
+Steps
 
 Save the code in a file, for example:
 
-ascii_art.py
+ascii_image.py
 
 
 Open terminal or command prompt.
 
 Run this command:
 
-python ascii_art.py
+python ascii_image.py
 
 
-You will see this message:
+After running, you will see:
 
 Output saved in decoded_ascii.txt
 
 
-Open decoded_ascii.txt to see the ASCII art.
+Open decoded_ascii.txt using Notepad or any editor to see the ASCII image.
 
-Output File
+Output
 
 File name: decoded_ascii.txt
 
-Contains: ASCII picture made from numbers
+Contains the image made using characters
 
-Can open with: Notepad, VS Code, or any text editor
-
+Can be shared or viewed easily
